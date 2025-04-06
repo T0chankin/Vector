@@ -1,6 +1,5 @@
-#pragma once
+#include <stdlib.h>
 
-#include <stdlib.h>`
 using ValueType = double;
 //! \brief Класс, реализующий С++ контейнер vector для типа double
 class Vector
