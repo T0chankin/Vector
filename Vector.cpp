@@ -31,7 +31,9 @@ public:
     //! \param other - перемещаемый объект
     Vector& operator=(Vector&& other) noexcept;
     //! Деструктор
-    ~Vector();
+    ~Vector(){
+        delete[] _data;
+    }
 
 	//! Вставка в конец
     void pushBack(const ValueType& value);
