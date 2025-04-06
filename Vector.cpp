@@ -78,9 +78,11 @@ public:
     double loadFactor() const;
 
     //! Доступ к элементу по индексу
-    ValueType& operator[](size_t idx);
+    ValueType& operator[](size_t idx){
+        return _data[idx];
+    }
     //! Доступ к элементу по индексу
-    const ValueType& operator[](size_t idx) const;
+    //const ValueType& operator[](size_t idx) const;
 
     //! Поиск первого вхождения значения
     //! \return - индекс элемента
