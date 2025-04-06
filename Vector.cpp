@@ -1,9 +1,10 @@
+
 #include <stdlib.h>
+#include "Vector.h"
 
 using ValueType = double;
 //! \brief Класс, реализующий С++ контейнер vector для типа double
-class Vector
-{
+class Vector{
 public:
     /*!
         \note Все конструкторы и операторы присваивания, 
