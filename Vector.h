@@ -1,5 +1,4 @@
 #pragma once
-
 #include <stdlib.h>
 
 using ValueType = double;
@@ -15,7 +14,11 @@ public:
     //! Конструктор без параметров
     Vector() = default;
     //! Конструктор с параметрами
-    Vector(const ValueType* rawArray, const size_t size, float coef = 2.0f);
+    Vector(const ValueType* rawArray, const size_t size, float coef = 2.0f){
+        *_data = *rawArray;
+        _size=size;
+        _multiplicativeCoef=coef;
+    }
     //! Конструктор копирования
     //! \param other - копируемый объект
     explicit Vector(const Vector& other);
@@ -29,7 +32,9 @@ public:
     //! \param other - перемещаемый объект
     Vector& operator=(Vector&& other) noexcept;
     //! Деструктор
-    ~Vector();
+    ~Vector(){
+        delete[] _data;
+    }
 
 	//! Вставка в конец
     void pushBack(const ValueType& value);
@@ -74,9 +79,11 @@ public:
     double loadFactor() const;
 
     //! Доступ к элементу по индексу
-    ValueType& operator[](size_t idx);
+    ValueType& operator[](size_t idx){
+        return _data[idx];
+    }
     //! Доступ к элементу по индексу
-    const ValueType& operator[](size_t idx) const;
+    //const ValueType& operator[](size_t idx) const;
 
     //! Поиск первого вхождения значения
     //! \return - индекс элемента
