@@ -14,11 +14,7 @@ public:
     //! Конструктор без параметров
     Vector() = default;
     //! Конструктор с параметрами
-    Vector(const ValueType* rawArray, const size_t size, float coef = 2.0f){
-        *_data = *rawArray;
-        _size=size;
-        _multiplicativeCoef=coef;
-    }
+    Vector(const ValueType* rawArray, const size_t size, float coef = 2.0f);
     //! Конструктор копирования
     //! \param other - копируемый объект
     explicit Vector(const Vector& other);
